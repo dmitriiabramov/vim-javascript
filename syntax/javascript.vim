@@ -153,10 +153,10 @@ syntax case match
 if exists("javascript_enable_domhtmlcss")
 
     " DOM2 things
-    syntax match jsDomElemAttrs     contained /\%(nodeName\|nodeValue\|nodeType\|parentNode\|childNodes\|firstChild\|lastChild\|previousSibling\|nextSibling\|attributes\|ownerDocument\|namespaceURI\|prefix\|localName\|tagName\)\>/
+    " syntax match jsDomElemAttrs     contained /\%(nodeName\|nodeValue\|nodeType\|parentNode\|childNodes\|firstChild\|lastChild\|previousSibling\|nextSibling\|attributes\|ownerDocument\|namespaceURI\|prefix\|localName\|tagName\)\>/
     " syntax match jsDomElemFuncs     contained /\%(insertBefore\|replaceChild\|removeChild\|appendChild\|hasChildNodes\|cloneNode\|normalize\|isSupported\|hasAttributes\|getAttribute\|setAttribute\|removeAttribute\|getAttributeNode\|setAttributeNode\|removeAttributeNode\|getElementsByTagName\|getAttributeNS\|setAttributeNS\|removeAttributeNS\|getAttributeNodeNS\|setAttributeNodeNS\|getElementsByTagNameNS\|hasAttribute\|hasAttributeNS\)\>/ nextgroup=jsParen skipwhite
     " HTML things
-    syntax match jsHtmlElemAttrs    contained /\%(className\|clientHeight\|clientLeft\|clientTop\|clientWidth\|dir\|id\|innerHTML\|lang\|length\|offsetHeight\|offsetLeft\|offsetParent\|offsetTop\|offsetWidth\|scrollHeight\|scrollLeft\|scrollTop\|scrollWidth\|style\|tabIndex\|title\)\>/
+    " syntax match jsHtmlElemAttrs    contained /\%(className\|clientHeight\|clientLeft\|clientTop\|clientWidth\|dir\|id\|innerHTML\|lang\|length\|offsetHeight\|offsetLeft\|offsetParent\|offsetTop\|offsetWidth\|scrollHeight\|scrollLeft\|scrollTop\|scrollWidth\|style\|tabIndex\|title\)\>/
     " syntax match jsHtmlElemFuncs    contained /\%(blur\|click\|focus\|scrollIntoView\|addEventListener\|dispatchEvent\|removeEventListener\|item\)\>/ nextgroup=jsParen skipwhite
 
     " CSS Styles in JavaScript
@@ -191,10 +191,10 @@ syntax cluster jsAll        contains=@jsExpression,jsLabel,jsConditional,jsRepea
 syntax region  jsTernaryIf  matchgroup=jsTernaryIfOperator start=+?+  end=+:+  contains=@jsExpression,jsTernaryIf
 
 "" catch errors caused by wrong parenthesis
-syntax match   jsParensError    ")\|}\|\]"
-syntax match   jsParensErrA     contained "\]"
-syntax match   jsParensErrB     contained ")"
-syntax match   jsParensErrC     contained "}"
+" syntax match   jsParensError    ")\|}\|\]"
+" syntax match   jsParensErrA     contained "\]"
+" syntax match   jsParensErrB     contained ")"
+" syntax match   jsParensErrC     contained "}"
 
 if main_syntax == "javascript"
   syntax sync clear
@@ -281,10 +281,10 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsBooleanFalse         Boolean
   HiLink jsNoise                Noise
   HiLink jsBrackets             Noise
-  HiLink jsParens               Noise
+  " HiLink jsParens               Noise
   HiLink jsBraces               Noise
   HiLink jsFuncBraces           Noise
-  HiLink jsFuncParens           Noise
+  " HiLink jsFuncParens           Noise
   HiLink jsSpecial              Special
   HiLink jsTemplateVar          Special
   HiLink jsGlobalObjects        Special
